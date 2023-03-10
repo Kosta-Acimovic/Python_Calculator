@@ -202,6 +202,6 @@ def calculator():
 
 
 c = 0
-while c != None:
+while c is not None:
     c = calculator()
     print(c, "\n\n")

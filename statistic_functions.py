@@ -110,7 +110,7 @@ def mode():
 def populationVariance():
     lista = listMaker()
     s = 0
-    s1 = 0
+
     k = mean(lista)
     n = counter(lista)
     for i in lista:
@@ -122,9 +122,9 @@ def populationVariance():
     return s
 
 
-def populationVariance(lista):
+def populationVariance1(lista):
     s = 0
-    s1 = 0
+
     k = mean(lista)
     n = counter(lista)
     for i in lista:
@@ -142,8 +142,8 @@ def populationStandardDeviation():
     return vr
 
 
-def populationStandardDeviation(lista):
-    vr = populationVariance(lista)
+def populationStandardDeviation1(lista):
+    vr = populationVariance1(lista)
     vr = math.sqrt(vr)
     return vr
 
@@ -151,7 +151,6 @@ def populationStandardDeviation(lista):
 def sampleVariance():
     lista = listMaker()
     s = 0
-    s1 = 0
     k = mean(lista)
     n = counter(lista)
     for i in lista:
@@ -163,9 +162,8 @@ def sampleVariance():
     return s
 
 
-def sampleVariance(lista):
+def sampleVariance1(lista):
     s = 0
-    s1 = 0
     k = mean(lista)
     n = counter(lista)
     for i in lista:
@@ -183,8 +181,8 @@ def sampleStandardDeviation():
     return vr
 
 
-def sampleStandardDeviation(lista):
-    vr = sampleVariance(lista)
+def sampleStandardDeviation1(lista):
+    vr = sampleVariance1(lista)
     vr = math.sqrt(vr)
     return vr
 
@@ -194,15 +192,14 @@ def confidenceInterval():
     cd = cdCounter()
     x = mean(lista)
     n = counter(lista)
-    st = sampleStandardDeviation(lista)
+    st = sampleStandardDeviation1(lista)
     x1 = x - cd * (st / math.sqrt(n))
     x2 = x + cd * (st / math.sqrt(n))
     vr = [x1, x2]
     return vr
 
 
-def sortOneTimeAsc():
-    lista = listMaker()
+def sortOneTimeAsc(lista):
     n = counter(lista) - 1
     n1 = 0
     n2 = n1 + 1
@@ -219,8 +216,7 @@ def sortOneTimeAsc():
     return lista
 
 
-def sortMultiTimeAsc():
-    lista = listMaker()
+def sortMultiTimeAsc(lista):
     n = counter(lista) - 1
     n1 = 0
     while n >= n1:
@@ -252,8 +248,7 @@ def sortGeneralAsc(lista):
     return lista
 
 
-def sortOneTimeDesc():
-    lista = listMaker()
+def sortOneTimeDesc(lista):
     n = counter(lista) - 1
     n1 = 0
     n2 = n1 + 1
@@ -270,8 +265,7 @@ def sortOneTimeDesc():
     return lista
 
 
-def sortMultiTimeDesc():
-    lista = listMaker()
+def sortMultiTimeDesc(lista):
     n = counter(lista) - 1
     n1 = 0
     while n >= n1:
@@ -306,7 +300,7 @@ def sortGeneralDesc(lista):
 def StandardError():
     lista = listMaker()
     n = counter(lista)
-    st = sampleStandardDeviation(lista)
+    st = sampleStandardDeviation1(lista)
     vr = st / (math.sqrt(n))
     return vr
 
@@ -314,7 +308,7 @@ def StandardError():
 def marginOfError():
     lista = listMaker()
     n = counter(lista)
-    st = populationStandardDeviation(lista)
+    st = populationStandardDeviation1(lista)
     cd = cdCounter()
     vr = cd * (st / (math.sqrt(n)))
     return vr
@@ -371,9 +365,9 @@ def quartile75():
 
 def IQR():
     print("You need to enter values for 1st and 3rd quartile\n")
-    print("For 1st one:\t");
+    print("For 1st one:\t")
     Q1 = quartile25()
-    print("For 3rd one:\t");
+    print("For 3rd one:\t")
     Q3 = quartile75()
     vr = Q3 - Q1
     return vr
