@@ -189,4 +189,4 @@ def calculator():
 c=0
 while c!=None:
     c=calculator()
-    print(c)
+    print(c , "\n\n")
