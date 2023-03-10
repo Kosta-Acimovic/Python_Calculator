@@ -36,7 +36,9 @@ def calculator():
                    "si   for sine of the number\n"
                    "co   for cosine of the number\n"
                    "tg   for tangent of the number\n"
-                   "ctg   for cotangent of the number\n")
+                   "ctg   for cotangent of the number\n"
+                   "log   for logarithm when you don`t know base\n"
+                   "log1   for logarithm when you know base\n")
         if op == "r":
             vr = chooseValue()
             vr = math.sqrt(vr)
@@ -83,6 +85,16 @@ def calculator():
             elif op == "ctg":
                 x=chooseValue()
                 vr=math.cos(x)/math.sin(x)
+            elif op == "log":
+                print("Enter value of log:\t")
+                x=chooseValue()
+                vr=math.log(x)
+            elif op == "log1":
+                print("Enter value of log:\t")
+                x=chooseValue()
+                print("Enter value of log base\t")
+                y=chooseValue()
+                vr=math.log(x,y)
             else:
                 print("Your value", op, "is not supported")
                 return None
@@ -171,7 +183,7 @@ def calculator():
     else:
         print("Your value",op,"is not supported")
         return None
-
+    print("\n")
     return vr
 
 c=0
