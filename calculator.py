@@ -17,7 +17,7 @@ def calculator():
     op=input("Choose level of functions\n"
              "A  for advanced\n"
              "B  for basic ones\n")
-    if op == "B": #SIN COS LOG...
+    if op == "B":
         op = input("Choose operation \n"
                    "+   for addition\n"
                    "-   subtraction\n"
@@ -33,10 +33,12 @@ def calculator():
             vr = chooseValue()
             vr = math.sqrt(vr)
 
-        elif op == "s": #OBRATI PAZNJU
+        elif op == "s":
             vr = chooseValue()
+            vr=str(vr)
             x = input("Choose power for your value " + vr + "\n")
             x = float(x)
+            vr=float(vr)
             vr = math.pow(vr, x)
         else:
             if op == "+":
