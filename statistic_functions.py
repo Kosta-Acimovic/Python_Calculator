@@ -53,11 +53,18 @@ def mean():
     s = 0
     n = counter(lista)
     for i in lista:
-        i=int(i)
+        i=float(i)
         s += i
     vr = s / n
     return vr
-
+def mean(lista):
+    s = 0
+    n = counter(lista)
+    for i in lista:
+        i=float(i)
+        s += i
+    vr = s / n
+    return vr
 def median():
     lista = listMaker()
     print("elements of the list were\n", lista)
@@ -96,6 +103,7 @@ def populationVariance():
     k = mean(lista)
     n = counter(lista)
     for i in lista:
+        i=float(i)
         s1 = i - k
         s1 = math.pow(s1, 2)
         s += s1
@@ -103,8 +111,7 @@ def populationVariance():
     return s
 
 def populationStandardDeviation():
-    lista = listMaker()
-    vr = populationVariance(lista)
+    vr = populationVariance()
     vr = math.sqrt(vr)
     return vr
 
@@ -115,6 +122,7 @@ def sampleVariance():
     k = mean(lista)
     n = counter(lista)
     for i in lista:
+        i=float(i)
         s1 = i - k
         s1 = math.pow(s1, 2)
         s += s1
@@ -122,8 +130,7 @@ def sampleVariance():
     return s
 
 def sampleStandardDeviation():
-    lista = listMaker()
-    vr = sampleVariance(lista)
+    vr = sampleVariance()
     vr = math.sqrt(vr)
     return vr
 

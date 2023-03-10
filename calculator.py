@@ -125,8 +125,6 @@ def calculator():
                    "sv   for VARIANCE OF SAMPLE\n"
                    "ssd   for STANDARD DEVIATION OF SAMPLE\n"
                    "ci   for calculating CONFIDENCE INTERVAL\n"
-                   "sa   for SORTING ASCENDING\n"
-                   "sd   for SORTING DESCENDING\n"
                    "se   for calculating STANDARD ERROR\n"
                    "moe   for calculating MARGIN OF ERROR\n"
                    "q1   for calculating QUARTILE 25\n"
@@ -145,6 +143,16 @@ def calculator():
             vr=populationVariance()
         elif op == "psd":
             vr=populationStandardDeviation()
+        elif op=="sv":
+            vr=sampleVariance()
+        elif op =="ssd":
+            vr=sampleStandardDeviation()
+        elif op == "ci":
+            vr=confidenceInterval()
+        elif op=="se":
+            vr=StandardError()
+        elif op=="moe":
+            vr=marginOfError()
         else:
             print("Your value", op, "is not supported")
             return None
