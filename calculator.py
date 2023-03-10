@@ -1,4 +1,9 @@
 import math
+def zeroValue(x):
+    if x==0:
+        print("For this case it`s not possible to choose 0")
+        return True
+    return False
 def chooseValue():
     x = input("Input value:\t")
     x = float(x)
@@ -56,6 +61,8 @@ def calculator():
             elif op == "/":
                 x = chooseValue()
                 y = chooseValue()
+                if zeroValue(y)==True:
+                    return None
                 vr = x / y
             elif op == "f":
                 x=chooseValue()
@@ -80,6 +87,8 @@ def calculator():
         if op == "%":
             print("Enter percentage for which you know return value\n")
             x1=checkPerc()
+            if zeroValue(x1)==True:
+                return None
             print("Enter return value of percetage ",x1,"\n")
             y=chooseValue()
             print("Enter percentage for which you don`t know return value\n")
@@ -90,6 +99,8 @@ def calculator():
             x = checkPerc()
             print("Enter return value of percetage ", x,"\n")
             y1 = chooseValue()
+            if zeroValue(y1)==True:
+                return None
             print("Enter return value for percetage you don`t know\n")
             y2 = chooseValue()
             vr=(x*y2)/y1
