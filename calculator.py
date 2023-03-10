@@ -173,4 +173,8 @@ def calculator():
         return None
 
     return vr
-print(calculator())
+
+c=0
+while c!=None:
+    c=calculator()
+    print(c)
