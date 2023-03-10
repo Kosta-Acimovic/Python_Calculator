@@ -110,13 +110,41 @@ def populationVariance():
     s = s / n
     return s
 
+def populationVariance(lista):
+    s = 0
+    s1 = 0
+    k = mean(lista)
+    n = counter(lista)
+    for i in lista:
+        i=float(i)
+        s1 = i - k
+        s1 = math.pow(s1, 2)
+        s += s1
+    s = s / n
+    return s
+
 def populationStandardDeviation():
     vr = populationVariance()
     vr = math.sqrt(vr)
     return vr
-
+def populationStandardDeviation(lista):
+    vr = populationVariance(lista)
+    vr = math.sqrt(vr)
+    return vr
 def sampleVariance():
     lista = listMaker()
+    s = 0
+    s1 = 0
+    k = mean(lista)
+    n = counter(lista)
+    for i in lista:
+        i=float(i)
+        s1 = i - k
+        s1 = math.pow(s1, 2)
+        s += s1
+    s = s / (n - 1)
+    return s
+def sampleVariance(lista):
     s = 0
     s1 = 0
     k = mean(lista)
@@ -133,7 +161,10 @@ def sampleStandardDeviation():
     vr = sampleVariance()
     vr = math.sqrt(vr)
     return vr
-
+def sampleStandardDeviation(lista):
+    vr = sampleVariance(lista)
+    vr = math.sqrt(vr)
+    return vr
 def confidenceInterval():
     lista = listMaker()
     cd = cdCounter()
@@ -268,7 +299,7 @@ def quartile25():
     else:
         p1 = int(p)
         p2 = p1 - 1
-        Q1 = (lista[p2] + lista[p1]) / 2
+        Q1 = (float(lista[p2]) + float(lista[p1])) / 2
     return Q1
 def quartile50():
     lista = listMaker()
@@ -282,7 +313,7 @@ def quartile50():
     else:
         p1 = int(p)
         p2 = p1 - 1
-        Q2 = (lista[p2] + lista[p1]) / 2
+        Q2 = (float(lista[p2]) + float(lista[p1])) / 2
     return Q2
 def quartile75():
     lista = listMaker()
@@ -297,13 +328,12 @@ def quartile75():
     else:
         p1 = int(p)
         p2 = p1 - 1
-        Q3 = (lista[p2] + lista[p1]) / 2
-        print(Q3)
+        Q3 = (float(lista[p2]) + float(lista[p1])) / 2
     return Q3
 
 def IQR():
-    lista = listMaker()
-    Q1=quartile25(lista)
-    Q3=quartile75(lista)
+    print("You need to enter values for 1st and 3rd quartile\n")
+    print("For 1st one:\t"); Q1=quartile25()
+    print("For 3rd one:\t"); Q3=quartile75()
     vr=Q3-Q1
     return vr

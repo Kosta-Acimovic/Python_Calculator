@@ -153,6 +153,12 @@ def calculator():
             vr=StandardError()
         elif op=="moe":
             vr=marginOfError()
+        elif op=="q1":
+            vr=quartile25()
+        elif op=="q2":
+            vr=quartile50()
+        elif op=="q3":
+            vr=quartile75()
         else:
             print("Your value", op, "is not supported")
             return None
