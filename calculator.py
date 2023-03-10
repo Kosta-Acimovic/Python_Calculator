@@ -21,9 +21,9 @@ def checkPerc():
 def calculator():
     vr=0
     op=input("Choose level of functions\n"
-             "A  for advanced\n"
-             "B  for basic ones\n"
-             "S for statistic ones\n")
+             "A   for advanced\n"
+             "B   for basic ones\n"
+             "S   for statistic ones\n")
     if op == "B":
         op = input("Choose operation \n"
                    "+   for addition\n"
@@ -38,7 +38,8 @@ def calculator():
                    "tg   for tangent of the number\n"
                    "ctg   for cotangent of the number\n"
                    "log   for logarithm when you don`t know base\n"
-                   "log1   for logarithm when you know base\n")
+                   "log1   for logarithm when you know base\n"
+                   "back   to go back\n")
         if op == "r":
             vr = chooseValue()
             vr = math.sqrt(vr)
@@ -95,13 +96,16 @@ def calculator():
                 print("Enter value of log base\t")
                 y=chooseValue()
                 vr=math.log(x,y)
+            elif op == "back":
+                vr=calculator()
             else:
                 print("Your value", op, "is not supported")
                 return None
     elif op =="A":
         op=input("Choose operation\n"
             "%   when you know two percentage values and return value for one of them\n"
-            "!%   when you know two return values and percentage for one of them\n")
+            "!%   when you know two return values and percentage for one of them\n"
+            "back   to go back\n")
         if op == "%":
             print("Enter percentage for which you know return value\n")
             x1=checkPerc()
@@ -127,6 +131,8 @@ def calculator():
                 return None
             vr=str(vr)
             vr=vr+"%"
+        elif op == "back":
+            vr=calculator()
         else:
             print("Your value",op,"is not supported")
             return None
@@ -146,7 +152,8 @@ def calculator():
                    "q1   for calculating QUARTILE 25\n"
                    "q2   for calculating QUARTILE 50\n"
                    "q3   for calculating QUARTILE 75\n"
-                   "iqr   for calculating IQR\n")
+                   "iqr   for calculating IQR\n"
+                   "back   to go back\n")
         if op =="m1":
             vr=mean1()
         elif op =="m2":
@@ -177,6 +184,8 @@ def calculator():
             vr=quartile75()
         elif op =="iqr":
             vr=IQR()
+        elif op == "back":
+            vr=calculator()
         else:
             print("Your value", op, "is not supported")
             return None
