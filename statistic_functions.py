@@ -23,7 +23,7 @@ def listMaker():
 
 def counter(lista):
     n = 0
-    for i in lista:
+    for _ in lista:
         n += 1
     return n
 
@@ -80,7 +80,6 @@ def median():
     print("elements of the list after sorting are")
     lista = sortGeneralAsc(lista)
     n = counter(lista)
-    vr = 0
     if n % 2 == 0:
         n = (n + 1) / 2
         n = int(n)
@@ -204,12 +203,12 @@ def sortOneTimeAsc(lista):
     n = counter(lista) - 1
     n1 = 0
     n2 = n1 + 1
-    for i in lista:
-        for j in lista:
+    for _ in lista:
+        for _ in lista:
             if n2 <= n:
-                if lista[n1] > lista[n2]:
-                    pom = lista[n1]
-                    lista[n1] = lista[n2]
+                if float(lista[n1]) > float(lista[n2]):
+                    pom = float(lista[n1])
+                    lista[n1] = float(lista[n2])
                     lista[n2] = pom
                 n2 += 1
             n1 += 1
@@ -234,12 +233,12 @@ def sortGeneralAsc(lista):
         n = counter(lista) - 1
         n1 = 0
         n2 = n1 + 1
-        for i in lista:
-            for j in lista:
+        for _ in lista:
+            for _ in lista:
                 if n2 <= n:
-                    if lista[n1] > lista[n2]:
-                        pom = lista[n1]
-                        lista[n1] = lista[n2]
+                    if float(lista[n1]) > float(lista[n2]):
+                        pom = float(lista[n1])
+                        lista[n1] = float(lista[n2])
                         lista[n2] = pom
                     n2 += 1
                 n1 += 1
@@ -253,12 +252,12 @@ def sortOneTimeDesc(lista):
     n = counter(lista) - 1
     n1 = 0
     n2 = n1 + 1
-    for i in lista:
-        for j in lista:
+    for _ in lista:
+        for _ in lista:
             if n2 <= n:
-                if lista[n1] < lista[n2]:
-                    pom = lista[n1]
-                    lista[n1] = lista[n2]
+                if float(lista[n1]) < float(lista[n2]):
+                    pom = float(lista[n1])
+                    lista[n1] = float(lista[n2])
                     lista[n2] = pom
                 n2 += 1
             n1 += 1
@@ -283,12 +282,12 @@ def sortGeneralDesc(lista):
         n = counter(lista) - 1
         n1 = 0
         n2 = n1 + 1
-        for i in lista:
-            for j in lista:
+        for _ in lista:
+            for _ in lista:
                 if n2 <= n:
-                    if lista[n1] < lista[n2]:
-                        pom = lista[n1]
-                        lista[n1] = lista[n2]
+                    if float(lista[n1]) < float(lista[n2]):
+                        pom = float(lista[n1])
+                        lista[n1] = float(lista[n2])
                         lista[n2] = pom
                     n2 += 1
                 n1 += 1
