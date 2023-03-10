@@ -1,10 +1,10 @@
 import math
 def chooseValue():
-    x = input("Input value\n")
+    x = input("Input value:\t")
     x = float(x)
     return x
 def checkPerc():
-    x = input("Input percentage between 0 and 100 without %\n")
+    x = input("Input percentage between 0 and 100 without %:\t")
     x = float(x)
     if x<0 and x>100:
         print("Your value", x, "is not supported")
@@ -36,7 +36,7 @@ def calculator():
         elif op == "s":
             vr = chooseValue()
             vr=str(vr)
-            x = input("Choose power for your value " + vr + "\n")
+            x = input("Choose power for your value " + vr + ":\t")
             x = float(x)
             vr=float(vr)
             vr = math.pow(vr, x)
@@ -78,19 +78,19 @@ def calculator():
             "% when you know two percentage values and return value for one of them\n"
             "!% when you know two return values and percentage for one of them\n")
         if op == "%":
-            print("Enter percentage for which you know return value")
+            print("Enter percentage for which you know return value\n")
             x1=checkPerc()
-            print("Enter return value of percetage ",x1)
+            print("Enter return value of percetage ",x1,"\n")
             y=chooseValue()
-            print("Enter percentage for which you don`t know return value")
+            print("Enter percentage for which you don`t know return value\n")
             x2=checkPerc()
             vr = (x2*y) / x1
         elif op=="!%":
-            print("Enter percentage for which you know return value")
+            print("Enter percentage for which you know return value\n")
             x = checkPerc()
-            print("Enter return value of percetage ", x)
+            print("Enter return value of percetage ", x,"\n")
             y1 = chooseValue()
-            print("Enter return value for percetage you don`t know ")
+            print("Enter return value for percetage you don`t know\n")
             y2 = chooseValue()
             vr=(x*y2)/y1
             if vr>100:
