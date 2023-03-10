@@ -1,4 +1,5 @@
 import math
+from statistic_functions import *
 def zeroValue(x):
     if x==0:
         print("For this case it`s not possible to choose 0")
