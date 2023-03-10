@@ -24,7 +24,8 @@ def counter(lista):
         n += 1
     return n
 
-def cdCounter(cd):
+def cdCounter():
+    cd=input("Enter value for your confidence level:\t")
     if cd < 1:
         cd *= 100
     if cd == 80:
@@ -125,9 +126,9 @@ def sampleStandardDeviation():
     vr = math.sqrt(vr)
     return vr
 
-def confidenceInterval(cd):
+def confidenceInterval():
     lista = listMaker()
-    cd = cdCounter(cd)
+    cd = cdCounter()
     x = mean(lista)
     n = counter(lista)
     st = sampleStandardDeviation(lista)
@@ -241,11 +242,11 @@ def StandardError():
     vr = st / (math.sqrt(n))
     return vr
 
-def marginOfError(cd):
+def marginOfError():
     lista = listMaker()
     n = counter(lista)
     st = populationStandardDeviation(lista)
-    cd = cdCounter(cd)
+    cd = cdCounter()
     vr = cd * (st / (math.sqrt(n)))
     return vr
 

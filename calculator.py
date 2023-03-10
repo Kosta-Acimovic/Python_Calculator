@@ -22,19 +22,20 @@ def calculator():
     vr=0
     op=input("Choose level of functions\n"
              "A  for advanced\n"
-             "B  for basic ones\n")
+             "B  for basic ones\n"
+             "S for statistic ones\n")
     if op == "B":
         op = input("Choose operation \n"
                    "+   for addition\n"
-                   "-   subtraction\n"
+                   "-   for subtraction\n"
                    "*   for multiplication\n"
                    "/   for division\n"
                    "s   for square of number\n"
                    "r   for root of number\n"
                    "f   for factorial of number\n"
-                   "S   for sine of the number\n"
-                   "C   for cosine of the number\n"
-                   "T   for tangent of the number\n")
+                   "si   for sine of the number\n"
+                   "co   for cosine of the number\n"
+                   "tn   for tangent of the number\n")
         if op == "r":
             vr = chooseValue()
             vr = math.sqrt(vr)
@@ -69,13 +70,13 @@ def calculator():
                 x=chooseValue()
                 x=round(x)
                 vr=math.factorial(x)
-            elif op == "S":
+            elif op == "si":
                 x=chooseValue()
                 vr=math.sin(x)
-            elif op == "C":
+            elif op == "co":
                 x=chooseValue()
                 vr=math.cos(x)
-            elif op == "T":
+            elif op == "tn":
                 x=chooseValue()
                 vr=math.tan(x)
             else:
@@ -113,6 +114,25 @@ def calculator():
         else:
             print("Your value",op,"is not supported")
             return None
+    elif op =="S":
+        op = input("Choose operation \n"
+                   "m1   for MEAN\n"
+                   "m2   for MEDIAN\n"
+                   "m3   for MODE\n"
+                   "cd   for calculating CONFIDENCE LEVEL value\n"
+                   "pv   for VARIANCE OF POPULATION\n"
+                   "psd   for STANDARD DEVIATION OF POPULATION\n"
+                   "sv   for VARIANCE OF SAMPLE\n"
+                   "ssd   for STANDARD DEVIATION OF SAMPLE\n"
+                   "ci   for calculating CONFIDENCE INTERVAL\n"
+                   "sa   for SORTING ASCENDING\n"
+                   "sd   for SORTING DESCENDING\n"
+                   "se   for calculating STANDARD ERROR\n"
+                   "moe   for calculating MARGIN OF ERROR\n"
+                   "q1   for calculating QUARTILE 25\n"
+                   "q2   for calculating QUARTILE 50\n"
+                   "q3   for calculating QUARTILE 75\n"
+                   "iqr   for calculating IQR\n")
     else:
         print("Your value",op,"is not supported")
         return None
