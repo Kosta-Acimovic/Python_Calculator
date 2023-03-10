@@ -159,6 +159,8 @@ def calculator():
             vr=quartile50()
         elif op=="q3":
             vr=quartile75()
+        elif op =="iqr":
+            vr=IQR()
         else:
             print("Your value", op, "is not supported")
             return None
