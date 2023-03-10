@@ -35,7 +35,8 @@ def calculator():
                    "f   for factorial of number\n"
                    "si   for sine of the number\n"
                    "co   for cosine of the number\n"
-                   "tn   for tangent of the number\n")
+                   "tg   for tangent of the number\n"
+                   "ctg   for cotangent of the number\n")
         if op == "r":
             vr = chooseValue()
             vr = math.sqrt(vr)
@@ -76,16 +77,19 @@ def calculator():
             elif op == "co":
                 x=chooseValue()
                 vr=math.cos(x)
-            elif op == "tn":
+            elif op == "tg":
                 x=chooseValue()
                 vr=math.tan(x)
+            elif op == "ctg":
+                x=chooseValue()
+                vr=math.cos(x)/math.sin(x)
             else:
                 print("Your value", op, "is not supported")
                 return None
     elif op =="A":
         op=input("Choose operation\n"
-            "% when you know two percentage values and return value for one of them\n"
-            "!% when you know two return values and percentage for one of them\n")
+            "%   when you know two percentage values and return value for one of them\n"
+            "!%   when you know two return values and percentage for one of them\n")
         if op == "%":
             print("Enter percentage for which you know return value\n")
             x1=checkPerc()
