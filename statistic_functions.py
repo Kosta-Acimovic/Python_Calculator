@@ -95,6 +95,7 @@ def median():
 def mode():
     lista = listMaker()
     vr = 0
+    tr=0
     for i in lista:
         vr2 = 0
         for j in lista:
@@ -102,8 +103,8 @@ def mode():
                 vr2 += 1
                 if vr2 > vr:
                     vr = vr2
-                    trvr = i
-    print(trvr, "appears ", vr, "times")
+                    tr = i
+    print(tr, "appears ", vr, "times")
     return vr
 
 
@@ -319,7 +320,6 @@ def quartile25():
     lista = sortGeneralAsc(lista)
     n = counter(lista)
     p = (n + 1) / 4
-    Q1 = 0
     if p % 1 == 0:
         p = int(p) - 1
         Q1 = lista[p]
@@ -335,7 +335,6 @@ def quartile50():
     lista = sortGeneralAsc(lista)
     n = counter(lista)
     p = (n + 1) / 2
-    Q2 = 0
     if p % 1 == 0:
         p = int(p) - 1
         Q2 = lista[p]
@@ -351,7 +350,6 @@ def quartile75():
     lista = sortGeneralAsc(lista)
     n = counter(lista)
     p = (3 * (n + 1)) / 4
-    Q3 = 0
     if p % 1 == 0:
         p = int(p) - 1
         Q3 = lista[p]
