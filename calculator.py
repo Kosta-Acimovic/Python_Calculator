@@ -133,6 +133,21 @@ def calculator():
                    "q2   for calculating QUARTILE 50\n"
                    "q3   for calculating QUARTILE 75\n"
                    "iqr   for calculating IQR\n")
+        if op =="m1":
+            vr=mean()
+        elif op =="m2":
+            vr=median()
+        elif op == "m3":
+            vr=mode()
+        elif op =="cd":
+            vr=cdCounter()
+        elif op == "pv":
+            vr=populationVariance()
+        elif op == "psd":
+            vr=populationStandardDeviation()
+        else:
+            print("Your value", op, "is not supported")
+            return None
     else:
         print("Your value",op,"is not supported")
         return None

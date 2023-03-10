@@ -26,6 +26,7 @@ def counter(lista):
 
 def cdCounter():
     cd=input("Enter value for your confidence level:\t")
+    cd=int(cd)
     if cd < 1:
         cd *= 100
     if cd == 80:
@@ -163,8 +164,7 @@ def sortMultiTimeAsc():
         n1 += 1
     return lista
 
-def sortGeneralAsc():
-    lista = listMaker()
+def sortGeneralAsc(lista):
     c = counter(lista) - 1
     c1 = 0
     while c >= c1:
@@ -212,8 +212,7 @@ def sortMultiTimeDesc():
         n1 += 1
     return lista
 
-def sortGeneralDesc():
-    lista = listMaker()
+def sortGeneralDesc(lista):
     c = counter(lista) - 1
     c1 = 0
     while c >= c1:
