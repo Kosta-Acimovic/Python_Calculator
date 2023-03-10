@@ -51,6 +51,7 @@ def mean():
     s = 0
     n = counter(lista)
     for i in lista:
+        i=int(i)
         s += i
     vr = s / n
     return vr
