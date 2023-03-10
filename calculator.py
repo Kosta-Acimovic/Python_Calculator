@@ -24,7 +24,6 @@ def checkPerc():
 
 
 def calculator():
-    vr = 0
     op = input("Choose level of functions\n"
                "A   for advanced\n"
                "B   for basic ones\n"

@@ -95,7 +95,7 @@ def median():
 def mode():
     lista = listMaker()
     vr = 0
-    tr=0
+    tr = 0
     for i in lista:
         vr2 = 0
         for j in lista:
