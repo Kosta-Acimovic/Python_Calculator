@@ -148,7 +148,7 @@ def calculator():
                    "q3   for calculating QUARTILE 75\n"
                    "iqr   for calculating IQR\n")
         if op =="m1":
-            vr=mean()
+            vr=mean1()
         elif op =="m2":
             vr=median()
         elif op == "m3":

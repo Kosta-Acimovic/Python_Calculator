@@ -48,7 +48,7 @@ def cdCounter():
         return 1.960
     return cd
 
-def mean():
+def mean1():
     lista = listMaker()
     s = 0
     n = counter(lista)
