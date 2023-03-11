@@ -27,7 +27,8 @@ def calculator():
     op = input("Choose level of functions\n"
                "A   for advanced\n"
                "B   for basic ones\n"
-               "S   for statistic ones\n")
+               "S   for statistic ones\n"
+               "Q   to quit\n")
     if op == "B":
         op = input("Choose operation \n"
                    "+   for addition\n"
@@ -193,9 +194,12 @@ def calculator():
         else:
             print("Your value", op, "is not supported")
             return None
-    else:
+    elif op == "Q":
         print("Your value", op, "is not supported")
         return None
+    else:
+        vr="You entered wrong value, please try again"
+        return vr
     print("\n")
     return vr
 
