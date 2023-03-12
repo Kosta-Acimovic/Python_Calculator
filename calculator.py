@@ -1,4 +1,5 @@
 from statistic_functions import *
+from formulas import *
 
 
 def zeroValue(x):
@@ -10,6 +11,7 @@ def zeroValue(x):
 
 def chooseValue():
     x = input("Input value:\t")
+
     x = float(x)
     return x
 
@@ -25,26 +27,27 @@ def checkPerc():
 
 def calculator():
     op = input("Choose level of functions\n"
-               "A   for advanced\n"
-               "B   for basic ones\n"
-               "S   for statistic ones\n"
-               "Q   to quit\n")
+               "A\tfor advanced\n"
+               "B\tfor basic ones\n"
+               "S\tfor statistic ones\n"
+               "T\tfor trigonometric ones\n"
+               "Q\tto quit\n")
     if op == "B":
         op = input("Choose operation \n"
-                   "+   for addition\n"
-                   "-   for subtraction\n"
-                   "*   for multiplication\n"
-                   "/   for division\n"
-                   "s   for square of number\n"
-                   "r   for root of number\n"
-                   "f   for factorial of number\n"
-                   "si   for sine of the number\n"
-                   "co   for cosine of the number\n"
-                   "tg   for tangent of the number\n"
-                   "ctg   for cotangent of the number\n"
-                   "log   for logarithm when you don`t know base\n"
-                   "log1   for logarithm when you know base\n"
-                   "back   to go back\n")
+                   "+\tfor ADDITION\n"
+                   "-\tfor SUBTRACTION\n"
+                   "*\tfor MULTIPLICATION\n"
+                   "/\tfor DIVISION\n"
+                   "s\tfor SQUARE OF NUMBER\n"
+                   "r\tfor ROOT OF NUMBER\n"
+                   "f\tfor FACTORIAL OF NUMBER\n"
+                   "si\tfor SINE OF NUMBER\n"
+                   "co\tfor COSINE OF NUMBER\n"
+                   "tg\tfor TANGENT OF NUMBER\n"
+                   "ctg\tfor COTANGENT OF NUMBER\n"
+                   "log\tfor LOGARITHM when you don`t know base\n"
+                   "log1\tfor LOGARITHM when you know base\n"
+                   "back\tto go BACK\n")
         if op == "r":
             vr = chooseValue()
             vr = math.sqrt(vr)
@@ -104,13 +107,13 @@ def calculator():
             elif op == "back":
                 vr = calculator()
             else:
-                print("Your value", op, "is not supported")
-                return None
+                vr = "You entered wrong value, you are redirected to the main menu\n"
+                return vr
     elif op == "A":
         op = input("Choose operation\n"
-                   "%   when you know two percentage values and return value for one of them\n"
-                   "!%   when you know two return values and percentage for one of them\n"
-                   "back   to go back\n")
+                   "%\twhen you know two percentage values and return value for one of them\n"
+                   "!%\twhen you know two return values and percentage for one of them\n"
+                   "back\tto go BACK\n")
         if op == "%":
             print("Enter percentage for which you know return value\n")
             x1 = checkPerc()
@@ -139,26 +142,26 @@ def calculator():
         elif op == "back":
             vr = calculator()
         else:
-            print("Your value", op, "is not supported")
-            return None
+            vr = "You entered wrong value, you are redirected to the main menu\n"
+            return vr
     elif op == "S":
         op = input("Choose operation \n"
-                   "m1   for MEAN\n"
-                   "m2   for MEDIAN\n"
-                   "m3   for MODE\n"
-                   "cd   for calculating CONFIDENCE LEVEL value\n"
-                   "pv   for VARIANCE OF POPULATION\n"
-                   "psd   for STANDARD DEVIATION OF POPULATION\n"
-                   "sv   for VARIANCE OF SAMPLE\n"
-                   "ssd   for STANDARD DEVIATION OF SAMPLE\n"
-                   "ci   for calculating CONFIDENCE INTERVAL\n"
-                   "se   for calculating STANDARD ERROR\n"
-                   "moe   for calculating MARGIN OF ERROR\n"
-                   "q1   for calculating QUARTILE 25\n"
-                   "q2   for calculating QUARTILE 50\n"
-                   "q3   for calculating QUARTILE 75\n"
-                   "iqr   for calculating IQR\n"
-                   "back   to go back\n")
+                   "m1\tfor MEAN\n"
+                   "m2\tfor MEDIAN\n"
+                   "m3\tfor MODE\n"
+                   "cd\tfor calculating CONFIDENCE LEVEL value\n"
+                   "pv\tfor VARIANCE OF POPULATION\n"
+                   "psd\tfor STANDARD DEVIATION OF POPULATION\n"
+                   "sv\tfor VARIANCE OF SAMPLE\n"
+                   "ssd\tfor STANDARD DEVIATION OF SAMPLE\n"
+                   "ci\tfor calculating CONFIDENCE INTERVAL\n"
+                   "se\tfor calculating STANDARD ERROR\n"
+                   "moe\tfor calculating MARGIN OF ERROR\n"
+                   "q1\tfor calculating QUARTILE 25\n"
+                   "q2\tfor calculating QUARTILE 50\n"
+                   "q3\tfor calculating QUARTILE 75\n"
+                   "iqr\tfor calculating IQR\n"
+                   "back\tto go BACK\n")
         if op == "m1":
             vr = mean1()
         elif op == "m2":
@@ -192,8 +195,31 @@ def calculator():
         elif op == "back":
             vr = calculator()
         else:
-            print("Your value", op, "is not supported")
-            return None
+            vr = "You entered wrong value, you are redirected to the main menu\n"
+            return vr
+    elif op == "T":
+        op = input("Choose operation\n"
+                   "s\tfor area of SQUARE \n"
+                   "rt\tfor area of RIGHT TRIANGLE\n"
+                   "c\tfor area of circle\n"
+                   "r\tfor area of rectangle\n"
+                   "back\tto go BACK\n")
+        if op == "s":
+            vr = square_area()
+        elif op == "rt":
+            vr = right_triangle_area()
+        elif op == "c":
+            vr = circle_area()
+        elif op == "r":
+            vr = rectangle_area()
+
+
+
+        elif op == "back":
+            vr = calculator()
+        else:
+            vr = "You entered wrong value, you are redirected to the main menu\n"
+            return vr
     elif op == "Q":
         print("Your value", op, "is not supported")
         return None
