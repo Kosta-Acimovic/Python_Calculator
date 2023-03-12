@@ -198,7 +198,7 @@ def calculator():
         print("Your value", op, "is not supported")
         return None
     else:
-        vr="You entered wrong value, please try again"
+        vr = "You entered wrong value, please try again"
         return vr
     print("\n")
     return vr

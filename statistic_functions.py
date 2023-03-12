@@ -17,6 +17,12 @@ def listMaker():
     lista = []
     for i in range(0, n):
         k = input("Enter value:\t")
+        k1 = k.isdigit()
+        if not k1:
+            while not k1:
+                print("Try again\n")
+                k = input("Enter value:\t")
+                k1 = k.isdigit()
         lista.append(k)
     return lista
 
